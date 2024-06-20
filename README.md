@@ -1,8 +1,8 @@
-Here is the translated and enhanced README.md in English:
-
 # bayer-challenge
 
 ## Proposed Architecture
+
+![](images/original.png)
 
 This architecture is based on the medallion architecture of data lakehouses. Each component is described below:
 
@@ -102,6 +102,8 @@ Esse codigo ira produzir o resultado dentro da pasta ``` data/gold/datamart.sql 
 
 
 # Automating for Production
+
+![](images/proposed.png)
 
 Here is a proposal to deploy a project like this to production, scalable when needed:
 
