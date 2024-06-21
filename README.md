@@ -52,6 +52,10 @@ The **data** folder at the root directory contains the data used throughout the 
 
 The **main.py** file is the project's entry point.
 
+# Diagram of tables data
+
+![](images/diagram.png)
+
 # Running the Project
 
 **Install Virtualenv**: If you don't have it already, install the virtualenv package using pip:
