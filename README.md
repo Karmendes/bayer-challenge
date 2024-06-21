@@ -37,12 +37,6 @@ Tasks performed in this case:
 - Table binding
 - Table joins
 
-# Data Diagram
-
-(Include a diagram of the data flow if available)
-
-
-
 ## Code Architecture
 
 Within the **src** folder, you will find the core of the application. Here is a brief explanation of each module:
