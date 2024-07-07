@@ -2,9 +2,13 @@
 
 ## Proposed Architecture
 
+
+
 ![](images/original.png)
 
-This architecture is based on the medallion architecture of data lakehouses. Each component is described below:
+This architecture is based on the medallion architecture, which is widely used in the data engineering market. It combines the strengths of a data lake and a data warehouse, resulting in a cost-effective solution with the vast storage capabilities of data lakes along with the consistency, integration, and organization of data warehouses. I have previously used this architecture, and it works well for the scenario described below.
+
+In this approach, each layer has a specific responsibility. The raw layer is for long-term storage of unprocessed data. The bronze layer applies initial formatting and data processing rules, including tests to measure the quality of the incoming data. The silver layer applies business rules to the data, bringing it closer to its final form. Finally, the gold layer represents the final modeling stage, allowing business users or BI analysts to easily extract their insights.
 
 ### Raw
 This layer receives data from the original sources. In this case, the data did not require any extraction process as they were already in the designated folder.
@@ -38,6 +42,8 @@ Tasks performed in this case:
 - Table joins
 
 ## Code Architecture
+
+The code architecture was designed to be easy to maintain and modify. The modules extractors, factories, and loaders are each components of an ETL process. By following some SOLID principles, these classes are decoupled from the etl_layers module. This decoupling makes it easier to maintain and modify each ETL, as each part shares a common interface. For example, if the data were stored in AWS S3, we could easily create an S3 class within the extractors module and replace the XLSX class with the S3 class quickly and effortlessly.
 
 Within the **src** folder, you will find the core of the application. Here is a brief explanation of each module:
 
